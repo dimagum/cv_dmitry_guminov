@@ -1,0 +1,196 @@
+%-------------------------
+% Resume in LateX
+% Author : Sourabh Bajaj
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generated PDF is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+% Just in case someone needs a heading that does not need to be in a list
+\newcommand{\resumeHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small #1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeItemPlain}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Large Guminov Dmitry} & Email: \href{mailto:dmitriyGuminov@yandex.ru}{dmitriyGuminov@yandex.ru}\\
+  \href{www.linkedin.com/in/dmitry-guminov-5a6a90264}{LinkedIn} \ \href{https://github.com/dimagum}{Github} & CV sourse: \href{https://github.com/dimagum/cv_dmitry_guminov}{Github} \\
+\end{tabular*}
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {National Research University Higher School of Economics}{Moscow, Russia}
+      {Master of Artificial Intelligence}{Aug 2025 -- Jun 2027}
+    \resumeSubheading
+      {National Research University Higher School of Economics}{Moscow, Russia}
+      {Bachelor of Science in Applied Mathematics}{Aug 2021 -- Jun 2025}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {T-Bank (ex. Tinkoff)}{Moscow, Russia}
+      {Risk Analyst}{Oct 2023 -- Present}
+      \resumeItemListStart
+        \resumeItemPlain{Risks of Credit Products: ML model quality assurance, end-to-end A/B testing processes, new logic implementation}
+      \resumeItemListEnd
+      
+% --------Multiple Positions Heading------------
+  %  \resumeSubSubheading
+  %   { - }{ -- }
+  %   \resumeItemListStart
+  %      \resumeItem{ - }
+  %        { - }
+  %   \resumeItemListEnd
+
+%-------------------------------------------
+
+    \resumeSubheading
+      {Education quality committee of HSE}{Moscow, Russia}
+      {Analyst}{Jan 2023 -- Sep 2023}
+      \resumeItemListStart
+        \resumeItemPlain{Student Assessment of Teaching analysis}
+        \resumeItemPlain{Academic Discipline Programs validation}
+        \resumeItemPlain{Analyzed distribution of Independent English Exam grades}
+
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+\section{Projects}
+  \resumeSubHeadingListStart
+        \resumeSubheading
+            {DL Service for Short-Term Cryptocurrency Forecasting}{}
+            {DL Researcher (Group project)}{Sep 2025 -- Jun 2026}
+                \resumeItemListStart
+                    \resumeItemPlain
+                        {Researched ML and DL methods in cryptocurrency forecasting.}
+                    \resumeItemPlain
+                        {Containerized the cryptocurrency forecasting model with Docker, delivering a near-production solution.}
+                \resumeItemListEnd
+
+
+        \resumeSubheading
+            {Neural Networks for numerical solutions of partial differential equations}{Moscow, Russia}
+            {Python Researcher}{Oct 2024 -- Apr 2025}
+                \resumeItemListStart
+                    \resumeItemPlain
+                        {Analyzed Fully-connected networks for numerical solutions of partial differential equations.}
+                    \resumeItemPlain
+                        {Used Fully-connected network for predicting position of a mechanical system. }
+
+                \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%--------SKILLS------------
+\section{Skills}
+    \begin{tabular}{ll}
+        \textbf{Programming Languages:} & \quad Python, SQL \\
+        \textbf{Developer Tools:} & \quad Jupyter Notebook, Docker, Kubernetes \\
+        \textbf{Frameworks \& Libraries:} & \quad Pandas, PyTorch, MLflow \\
+        \textbf{Languages:} & \quad Russian - native, English - Upper-Intermediate (B2, FCE)
+    \end{tabular}
+
+
+%--------OTHER-------------
+\section{Other}
+    \begin{tabular}{ll}
+        \textbf{Soft-skills:} & \quad Stress-resistance, Reliability, Initiative \\
+        \textbf{Interests:} & \quad Deep Learning, Machine Learning, Data Science, Analytics
+    \end{tabular}
+
+%-------------------------------------------
+\end{document}
