@@ -4,13 +4,12 @@
 
 Welcome to the repository containing the source code for my personal resume. 
 
-🔗 [**Download the latest PDF version here**](https://raw.githubusercontent.com/dimagum/cv_dmitry_guminov/dev/CV_Dmitry_Guminov.pdf)
+🔗 [**Download the latest PDF version here**](https://raw.githubusercontent.com/dimagum/cv_dmitry_guminov/main/CV_Dmitry_Guminov.pdf)
 
 ## Preview
 
-<a href="https://raw.githubusercontent.com/dimagum/cv_dmitry_guminov/dev/CV_Dmitry_Guminov.pdf">
-  <img src="preview.png" alt="Resume Preview" width="600" style="border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-</a>
+
+[![Resume Preview](https://raw.githubusercontent.com/dimagum/cv_dmitry_guminov/main/preview.png)](https://raw.githubusercontent.com/dimagum/cv_dmitry_guminov/main/CV_Dmitry_Guminov.pdf)
 
 ## How it works (CI/CD)
 
