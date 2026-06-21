@@ -9,7 +9,7 @@ Welcome to the repository containing the source code for my personal resume.
 ## Preview
 
 
-[![Resume Preview](https://raw.githubusercontent.com/dimagum/cv_dmitry_guminov/main/preview.png)](https://raw.githubusercontent.com/dimagum/cv_dmitry_guminov/main/CV_Dmitry_Guminov.pdf)
+[![Resume Preview](https://raw.githubusercontent.com/dimagum/cv_dmitry_guminov/main/resume_preview.png)](https://raw.githubusercontent.com/dimagum/cv_dmitry_guminov/main/CV_Dmitry_Guminov.pdf)
 
 ## How it works (CI/CD)
 
