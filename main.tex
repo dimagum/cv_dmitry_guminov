@@ -1,53 +1,35 @@
 %-------------------------
-% Resume in Latex
-% Author : Sourabh Bajaj + some brand new features from Mary Feofanova + some changes by Muhammadjon Hakimov
-% Sourabh's: https://github.com/sb2nov/resume
-% Mary's: https://github.com/mary3000/resume
-% Muhammadjon's: https://github.com/mrhakimov/resume
+% Resume in LateX
+% Author : Sourabh Bajaj
 % License : MIT
 %------------------------
 
-\documentclass[letterpaper,10pt]{article}
+\documentclass[letterpaper,11pt]{article}
 
-\usepackage{makecell}
-\usepackage[link=off]{phonenumbers}
-\usepackage{ragged2e}
-
-\usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
-\usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[pdftex]{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
-
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
 
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
+\fancyhf{} % Clear all header and footer fields
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\usepackage[margin=0.3in]{geometry}
+
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.0in}
-\addtolength{\evensidemargin}{-0.0in}
-\addtolength{\textwidth}{0in}
-\addtolength{\topmargin}{10pt}
-\addtolength{\textheight}{0.0in}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
 
 \urlstyle{same}
-
-\usepackage{xcolor} % http://ctan.org/pkg/xcolor
-\usepackage{hyperref} % http://ctan.org/pkg/hyperref
-\hypersetup{
-  colorlinks=true,
-  linkcolor=blue!50!red,
-  linkbordercolor=red,
-  urlcolor=black!70!black,
-  pdfnewwindow=true
-}
 
 \raggedbottom
 \raggedright
@@ -55,72 +37,46 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-10pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generated PDF is machine readable/ATS parsable
+\pdfgentounicode=1
 
 %-------------------------
 % Custom commands
-\def \ifempty#1{\def\temp{#1} \ifx\temp\empty }
-
 \newcommand{\resumeItem}[2]{
   \item\small{
-  	\ifempty{#1}#2\else\textbf{#1}{: #2 \vspace{-2pt}}\fi
+    \textbf{#1}{: #2 \vspace{-2pt}}
   }
 }
 
-\usepackage[dvipsnames]{xcolor}
-\definecolor{mygray}{gray}{0}
-\usepackage{fancybox}
-
-\usepackage{lmodern}
-\usepackage{tikz}
-
-% Style definition
-\tikzset{rndblock/.style={rounded corners,rectangle,draw,outer sep=0pt}}
-
-% Command Definition
-% 1 optional to customize the aspect, 2 mandatory: text to be framed
-\newcommand{\tframed}[2][]{\tikz[baseline=(h.base)]\node[rndblock,#1] (h) {\color{black}{#2}};}
-
-\newcommand*{\mystrut}{\rule[-0.2\baselineskip]{0pt}{0.8\baselineskip}}
-\newcommand{\skill}[1]{\tframed[lightgray]{\mystrut#1}}
-
-
-\newcommand{\resumeSubheading}[4]{
-  \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \vspace{-12pt}\textbf{#3} & \textcolor{mygray}{\textit{\small #2}} \\
-      \textit{\small#1} & \textcolor{mygray}{\textit{\small #4}} \\
+% Just in case someone needs a heading that does not need to be in a list
+\newcommand{\resumeHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small #3} & \textit{\small #4} \\
     \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeExpSubheading}[5]{
-  \vspace{3pt}
-  \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \vspace{2pt} \textbf{#1}  & \textcolor{mygray}{\small #2} \\
-      \textit{#3} & \textcolor{mygray}{\textit{\small #4}} \\
-      {\scriptsize#5}
-    \end{tabular*}\vspace{3pt}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeExpJointSubheading}[5]{
-  \vspace{-14pt}
-  \item
+\newcommand{\resumeSubSubheading}[2]{
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \vspace{2pt} \textbf{#1}  & \textcolor{mygray}{\small #2} \\
-      \textit{#3} & \textcolor{mygray}{\textit{\small #4}} \\
-      {\scriptsize#5}
-    \end{tabular*}\vspace{3pt}
+      \textit{\small #1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeProjSubheading}[5]{
-  \vspace{-10pt}\item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \vspace{2pt} \textbf{#1}  & \textcolor{mygray}{\small #2} \\
-      \textbf{#3} & \textcolor{mygray}{\textit{\small #4}} \\
-      {\scriptsize#5}
-    \end{tabular*}\vspace{3pt}
+\newcommand{\resumeItemPlain}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
 }
 
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
@@ -129,169 +85,112 @@
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
-
-\usepackage{changepage}
-\newcommand{\resumeDesc}[1]{\begin{adjustwidth}{5pt}{0pt}\vspace{-2pt}{#1}\end{adjustwidth}}
-
-\newcommand{\ExternalLink}{
-    \tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{
-        \begin{scope}[x=1ex, y=1ex]
-            \clip (-0.1,-0.1) 
-                --++ (-0, 1.2) 
-                --++ (0.6, 0) 
-                --++ (0, -0.6) 
-                --++ (0.6, 0) 
-                --++ (0, -1);
-            \path[draw, 
-                line width = 0.5, 
-                rounded corners=0.5] 
-                (0,0) rectangle (1,1);
-        \end{scope}
-        \path[draw, line width = 0.5] (0.5, 0.5) 
-            -- (1, 1);
-        \path[draw, line width = 0.5] (0.6, 1) 
-            -- (1, 1) -- (1, 0.6);
-        }
-    }
-    
-\definecolor{Blue1}{HTML}{4D4EDC}
-\newcommand{\MYhref}[3][Blue1]{\href{#2}{\color{#1}{#3}}}
 
 %-------------------------------------------
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
+
 %----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Large Guminov Dmitry} & Email: \href{mailto:dmitriyGuminov@yandex.ru}{dmitriyGuminov@yandex.ru}\\
+  \href{www.linkedin.com/in/dmitry-guminov-5a6a90264}{LinkedIn} \ \href{https://github.com/dimagum}{Github} & CV sourse: \href{https://github.com/dimagum/cv_dmitry_guminov}{Github} \\
+\end{tabular*}
 
-\begin{center}\textbf{\Large Dmitry Guminov}\end{center}
-\vspace{-12pt}
-\begin{center}
-+7(910)478-44-97
-Email: \MYhref{mailto:dmitriyGuminov@yandex.ru}{dmitriyGuminov@yandex.ru} \quad
-LinkedIn: \MYhref{https://www.linkedin.com/mwlite/in/dmitry-guminov-5a6a90264}{dimagum} \quad
-GitHub: \MYhref{https://github.com/dimagum}{dimagum}
-\end{center}
-
-%-------------SUMMARY-----------------
-\vspace{-10pt}
-\section{Summary}
-\resumeSubHeadingListStart
-\justifying
-Analyst at T-bank. Moscow HSE Artificial Intelligence 1st year student.
-\resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------------
-\vspace{-5pt}
 \section{Education}
-  \justifying
   \resumeSubHeadingListStart
-   \resumeExpSubheading
-      {{National Research University Higher School of Economics}}{Moscow, Russia}
-      {\href{https://www.hse.ru/ba/am}{Bachelor of Science in Applied Mathematics \ExternalLink}}{Aug 2021 --- Jun 2025}{}
+    \resumeSubheading
+      {National Research University Higher School of Economics}{Moscow, Russia}
+      {Master of Artificial Intelligence}{Aug 2025 -- Jun 2027}
+    \resumeSubheading
+      {National Research University Higher School of Economics}{Moscow, Russia}
+      {Bachelor of Science in Applied Mathematics}{Aug 2021 -- Jun 2025}
+  \resumeSubHeadingListEnd
 
-    \resumeExpSubheading
-      {{National Research University Higher School of Economics}}{Moscow, Russia}
-      {\href{https://www.hse.ru/ma/mlds/}{Master of Artificial Intelligence \ExternalLink}}{Aug 2025 --- Jun 2027}{}
-    \resumeSubHeadingListEnd
 
-%-------------PROJECTS-----------------
-\vspace{-5pt}
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {T-Bank (ex. Tinkoff)}{Moscow, Russia}
+      {Risk Analyst}{Oct 2023 -- Present}
+      \resumeItemListStart
+        \resumeItemPlain{Risks of Credit Products: ML model quality assurance, end-to-end A/B testing processes, new logic implementation}
+      \resumeItemListEnd
+      
+% --------Multiple Positions Heading------------
+  %  \resumeSubSubheading
+  %   { - }{ -- }
+  %   \resumeItemListStart
+  %      \resumeItem{ - }
+  %        { - }
+  %   \resumeItemListEnd
+
+%-------------------------------------------
+
+    \resumeSubheading
+      {Education quality committee of HSE}{Moscow, Russia}
+      {Analyst}{Jan 2023 -- Sep 2023}
+      \resumeItemListStart
+        \resumeItemPlain{Student Assessment of Teaching analysis}
+        \resumeItemPlain{Academic Discipline Programs validation}
+        \resumeItemPlain{Analyzed distribution of Independent English Exam grades}
+
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
 \section{Projects}
   \resumeSubHeadingListStart
-      \resumeProjSubheading
-      {}{}{\Project Neural Networks for numerical solutions of partial differential equations}{}
-      {\skill{Python} \skill{PyTorch} \skill{AI}}
-          \resumeDesc{
-          \begin{itemize}
-              \item Analyzed Fully-connected networks for numerical solutions of partial differential equations
-              \item Used Fully-connected network for predicting position of a mechanical system
-          \end{itemize}
-          }
-
-  \resumeSubHeadingListEnd
-
-%------------EXPERIENCE-----------------
-\vspace{-5pt}
-\section{Experience}
-\justifying
-  \resumeSubHeadingListStart
-   \resumeExpSubheading
-      {{T-bank (ex. Tinkoff)}}{Moscow, Russia}
-      {Analyst}{Oct 2023 --- Present}{}
-      \resumeDesc{
-        Risk model analyst, credit products
-      \begin{itemize}
-          \item Worked with credit risk strategy 
-          \item Analyzed results of several A/B tests
-          \item Cost strategy optimization
-      \end{itemize}}
-      
-    
-  \resumeSubHeadingListEnd
+        \resumeSubheading
+            {DL Service for Short-Term Cryptocurrency Forecasting}{}
+            {DL Researcher (Group project)}{Sep 2025 -- Jun 2026}
+                \resumeItemListStart
+                    \resumeItemPlain
+                        {Researched ML and DL methods in cryptocurrency forecasting.}
+                    \resumeItemPlain
+                        {Containerized the cryptocurrency forecasting model with Docker, delivering a near-production solution.}
+                \resumeItemListEnd
 
 
-\justifying
-  \resumeSubHeadingListStart
-   \resumeExpSubheading
-      {{Education quality committee of HSE}}{Moscow, Russia}
-      {Analyst}{Jan 2023 --- Sep 2023}{}
-      \resumeDesc{
-      \begin{itemize}
-          \item Student Assessment of Teaching analysis
-          \item Academic Discipline Programs validation
-          \item Analyzed distribution of Independent English Exam grades
-      \end{itemize}}
+        \resumeSubheading
+            {Neural Networks for numerical solutions of partial differential equations}{Moscow, Russia}
+            {Python Researcher}{Oct 2024 -- Apr 2025}
+                \resumeItemListStart
+                    \resumeItemPlain
+                        {Analyzed Fully-connected networks for numerical solutions of partial differential equations.}
+                    \resumeItemPlain
+                        {Used Fully-connected network for predicting position of a mechanical system. }
+
+                \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
 
-
-%---------PROGRAMMING SKILLS------------
+%--------SKILLS------------
 \section{Skills}
- \resumeSubHeadingListStart
- \begin{tabular}{ll}
-\textbf{Languages:} & \quad Python, SQL, C++ \\
-\textbf{Developer tools:} & \quad Google Collab, Jupyter Notebook \\
-\textbf{Frameworks \& Libraries:} & \quad Pandas, NumPy, Matplotlib, Seaborn, SciPy, Scikit-learn, PyTorch \\
-\textbf{Languages:} & \quad Russian - native, English - Upper-Intermediate (B2, FCE)
-\end{tabular}
- \resumeSubHeadingListEnd
+    \begin{tabular}{ll}
+        \textbf{Programming Languages:} & \quad Python, SQL \\
+        \textbf{Developer Tools:} & \quad Jupyter Notebook, Docker, Kubernetes \\
+        \textbf{Frameworks \& Libraries:} & \quad Pandas, PyTorch, MLflow \\
+        \textbf{Languages:} & \quad Russian - native, English - Upper-Intermediate (B2, FCE)
+    \end{tabular}
 
-%-----------ACHIEVEMENTS-----------------
-% \vspace{-5pt}
-% \section{Achievements}
- \resumeSubHeadingListStart
-%  \begin{tabular}{ll}
-% \textbf{Current GPA:} & \quad 7.69/10; top-6 student in academic ranking out of 94
-% \end{tabular}
-\resumeSubHeadingListEnd
 
-%----------------OTHER-----------------
-\vspace{-5pt}
+%--------OTHER-------------
 \section{Other}
- \resumeSubHeadingListStart
- \begin{tabular}{ll}
-\textbf{Soft-skills:} & \quad Stress-resistance, reliability, initiative \\
-\textbf{Interests:} & \quad Analytics, Data Science, Machine Learning, Deep Learning
-\end{tabular}
-    
-\resumeSubHeadingListEnd
+    \begin{tabular}{ll}
+        \textbf{Soft-skills:} & \quad Stress-resistance, Reliability, Initiative \\
+        \textbf{Interests:} & \quad Deep Learning, Machine Learning, Data Science, Analytics
+    \end{tabular}
+
+%-------------------------------------------
 \end{document}
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-resume/resume.tex at main · mrhakimov/resume
